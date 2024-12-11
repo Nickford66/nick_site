@@ -129,4 +129,37 @@
     .shape-col {
         flex: 0 0 80%; /* Adjust width as needed */
     }
+    .side-image {
+        max-width: 80%;
+    }
 }
+/* Side Image Initial Styling */
+.side-image {
+    position: absolute;
+    left: 0; /* Align to the left */
+    bottom: -200px; /* Start 200px below the container */
+    width: 200px; /* Adjust as needed */
+    height: auto;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 2s ease, bottom 2s ease; /* Smooth transition */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* Animation Class to Trigger the Rise and Fade */
+@keyframes riseAndFade {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Apply Animation Class */
+.rise-and-fade {
+    animation: riseAndFade 2s forwards;
+}
+

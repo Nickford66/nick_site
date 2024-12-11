@@ -9,11 +9,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const shapeCol = document.querySelector('.shape-col'); // Shape Generator Column
     const overlay = document.querySelector('.overlay');
     const buttonGroup = document.querySelector('.button-group');
+    const backgroundMusic = document.getElementById('backgroundMusic'); // Audio Element
+    const sideImage = document.getElementById('sideImage');
 
     let shapeInterval;
     let clearCanvasInterval;
     let overlayInterval;
 
+    function showSideImage() {
+        sideImage.classList.add('rise-and-fade');
+    }
+
+    function hideSideImage() {
+        sideImage.classList.remove('rise-and-fade');
+    }
     // Function to generate a random color
     function getRandomColor() {
         const letters = '0123456789ABCDEF';
@@ -55,7 +64,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // 7. Start Clearing the Canvas Periodically
         startCanvasClearer();
 
-        // 8. Add Event Listener to Stop Animations When Clicking Outside the Shape Card
+        // 8. Play Background Music
+        backgroundMusic.currentTime = 0; // Reset to start
+        backgroundMusic.play();
+
+        setTimeout(showSideImage, 3000);
+
+        // 9. Add Event Listener to Stop Animations When Clicking Outside the Shape Card
         document.addEventListener('click', outsideClickListener);
     }
 
@@ -93,6 +108,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 8. Stop Clearing the Canvas
         stopCanvasClearer();
+
+        // 9. Pause Background Music
+        backgroundMusic.pause();
+        backgroundMusic.currentTime = 0; // Reset to start
+
+        hideSideImage();
     }
 
     // Function to handle clicks outside the Shape Generator Card
