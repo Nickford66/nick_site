@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const startButton = document.getElementById('startAnimation');
     const stopButton = document.getElementById('stopAnimation');
-    const header = document.querySelector('.header');
+    const hero = document.querySelector('.hero');
 
     let animationId;
     let shapeInterval;
@@ -14,11 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
         styleSheet.type = 'text/css';
         const keyframes = `
             @keyframes colorShift {
-                0% { background-color: #0d6efd; }
-                25% { background-color: #dc3545; }
-                50% { background-color: #ffc107; }
-                75% { background-color: #198754; }
-                100% { background-color: #0d6efd; }
+                0% { background-color: rgba(240, 240, 240, 0.6); }
+                25% { background-color: rgba(220, 220, 220, 0.6); }
+                50% { background-color: rgba(200, 200, 200, 0.6); }
+                75% { background-color: rgba(220, 220, 220, 0.6); }
+                100% { background-color: rgba(240, 240, 240, 0.6); }
             }
         `;
         styleSheet.innerHTML = keyframes;
@@ -29,13 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Start Animation
     startButton.addEventListener('click', () => {
-        header.style.animation = 'colorShift 10s infinite';
+        hero.style.animation = 'colorShift 10s infinite';
         startShapeGenerator();
     });
 
     // Stop Animation
     stopButton.addEventListener('click', () => {
-        header.style.animation = '';
+        hero.style.animation = '';
         stopShapeGenerator();
     });
 
@@ -43,10 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('shapeCanvas');
     const ctx = canvas.getContext('2d');
 
-    // Resize canvas to full screen
+    // Resize canvas to fit its container
     function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        canvas.width = canvas.parentElement.clientWidth - 40; // Adjust for padding
+        canvas.height = 300; // Fixed height as per card
     }
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
@@ -99,7 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start generating shapes
     function startShapeGenerator() {
         if (!shapeInterval) {
-            shapeInterval = setInterval(drawRandomShape, 500);
+            shapeInterval = setInterval(() => {
+                drawRandomShape();
+            }, 500);
         }
     }
 
