@@ -4,7 +4,7 @@
 .hero {
     position: relative;
     height: 100vh;
-    background-image: url('hero-background.jpg'); /* Replace with your hero image */
+     /* Replace with your hero image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
