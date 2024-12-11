@@ -4,7 +4,7 @@
 .hero {
     position: relative;
     height: 100vh;
-     /* Replace with your hero image */
+    background-image: url('hero-background.jpg'); /* Replace with your hero image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -13,16 +13,16 @@
     justify-content: center;
 }
 
-/* Overlay to darken the background image for better contrast */
-.hero::after {
-    content: '';
+/* Overlay Styling */
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(240, 240, 240, 0.6); /* Light gray overlay */
+    background: rgba(240, 240, 240, 0.1); /* Initial overlay color */
     z-index: 0;
+    transition: background-color 2s ease; /* Smooth transition for color changes */
 }
 
 /* Ensure content is above the overlay */
@@ -31,23 +31,83 @@
     z-index: 1;
 }
 
+/* Profile Picture Styling */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Indicates that the image is clickable */
+}
+
+/* Cool Hover Effect for Profile Picture */
+.profile-pic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
 /* Card Styling */
 .card {
     border: none;
     border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    transition: transform 1s ease, opacity 1s ease; /* Smooth transitions for animations */
 }
 
-.card img {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    height: 300px;
-    object-fit: cover;
+.bio-card {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+/* Biography Card Falling Down */
+.bio-card.fall-down {
+    transform: translateY(100px);
+    opacity: 0;
+}
+/* Shape Generator Card Specific Styling */
+.shape-card {
+    transition: transform 1s ease; /* Smooth scaling */
 }
 
 /* Canvas Styling */
 #shapeCanvas {
     border-radius: 10px;
     background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 1s ease; /* Smooth scaling */
+}
+
+/* Modal Content Styling */
+.modal-content {
+    border-radius: 15px;
+    /* Optional: Add a subtle box-shadow or other styles */
+}
+
+/* Animation Classes */
+
+/* Class to trigger Biography Card falling down */
+.fall-down {
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+/* Class to trigger Canvas expansion */
+.expand-canvas {
+    transform: scale(1.2);
+}
+
+
+
+/* Class to center the Shape Generator Card */
+.center-shape-card {
+    /* Utilize Bootstrap's flex utilities for centering */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Responsive Adjustments */
@@ -56,7 +116,17 @@
         padding: 20px;
     }
 
-    .card img {
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    #shapeCanvas {
         height: 200px;
+    }
+
+    /* Adjust Shape Generator Column for smaller screens */
+    .shape-col {
+        flex: 0 0 80%; /* Adjust width as needed */
     }
 }
