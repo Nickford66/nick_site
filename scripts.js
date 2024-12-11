@@ -1,23 +1,24 @@
 // script.js
 
-// Fancy Keyframe Animations
 document.addEventListener('DOMContentLoaded', () => {
-    const animateButton = document.getElementById('animateButton');
-    const stopButton = document.getElementById('stopButton');
+    const startButton = document.getElementById('startAnimation');
+    const stopButton = document.getElementById('stopAnimation');
     const header = document.querySelector('.header');
 
     let animationId;
+    let shapeInterval;
 
+    // Create Keyframes Dynamically
     const createKeyframes = () => {
         const styleSheet = document.createElement('style');
         styleSheet.type = 'text/css';
         const keyframes = `
             @keyframes colorShift {
-                0% { background-color: #1e87f0; }
-                25% { background-color: #f05454; }
-                50% { background-color: #f0c419; }
-                75% { background-color: #34a853; }
-                100% { background-color: #1e87f0; }
+                0% { background-color: #0d6efd; }
+                25% { background-color: #dc3545; }
+                50% { background-color: #ffc107; }
+                75% { background-color: #198754; }
+                100% { background-color: #0d6efd; }
             }
         `;
         styleSheet.innerHTML = keyframes;
@@ -26,12 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     createKeyframes();
 
-    animateButton.addEventListener('click', () => {
-        header.style.animation = 'colorShift 5s infinite';
+    // Start Animation
+    startButton.addEventListener('click', () => {
+        header.style.animation = 'colorShift 10s infinite';
+        startShapeGenerator();
     });
 
+    // Stop Animation
     stopButton.addEventListener('click', () => {
         header.style.animation = '';
+        stopShapeGenerator();
     });
 
     // Random Shape Generator Inspired by TempleOS
@@ -91,20 +96,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    let shapeInterval;
-
     // Start generating shapes
-    animateButton.addEventListener('click', () => {
+    function startShapeGenerator() {
         if (!shapeInterval) {
             shapeInterval = setInterval(drawRandomShape, 500);
         }
-    });
+    }
 
     // Stop generating shapes
-    stopButton.addEventListener('click', () => {
+    function stopShapeGenerator() {
         if (shapeInterval) {
             clearInterval(shapeInterval);
             shapeInterval = null;
         }
-    });
+    }
 });
