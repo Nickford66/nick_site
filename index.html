@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fancy Animated Site with Random Shapes</title>
-    <!-- UIKit CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/css/uikit.min.css" />
+    <title>Modern Animated Site with Random Shapes</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom Styles (optional) -->
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: #f0f0f0;
+            background-color: #f8f9fa;
             overflow: hidden; /* Hide scrollbars for the canvas */
+            position: relative;
+            min-height: 100vh;
         }
         .header {
-            padding: 20px;
+            padding: 60px 0;
             text-align: center;
-            background-color: #1e87f0;
+            background-color: #0d6efd;
             color: white;
+            position: relative;
+            z-index: 1;
         }
         #shapeCanvas {
             position: fixed;
@@ -27,49 +31,83 @@
             height: 100%;
             z-index: -1; /* Place canvas behind other content */
         }
+        .content {
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <h1>Welcome to the Fancy Animated Site</h1>
-        <p>Enjoy the random shapes and animations!</p>
-    </header>
-
-    <main class="uk-container uk-margin-top">
-        <div class="uk-grid-small uk-child-width-1-3@s uk-text-center" uk-grid>
-            <div>
-                <div class="uk-card uk-card-default uk-card-body">
-                    <h3 class="uk-card-title">Card 1</h3>
-                    <p>This is a simple card with UIKit styling.</p>
-                </div>
-            </div>
-            <div>
-                <div class="uk-card uk-card-primary uk-card-body">
-                    <h3 class="uk-card-title">Card 2</h3>
-                    <p>Another card with different styling.</p>
-                </div>
-            </div>
-            <div>
-                <div class="uk-card uk-card-secondary uk-card-body">
-                    <h3 class="uk-card-title">Card 3</h3>
-                    <p>UIKit makes it easy to design beautiful layouts.</p>
-                </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">AnimatedSite</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
             </div>
         </div>
+    </nav>
 
-        <div class="uk-text-center uk-margin-top">
-            <button class="uk-button uk-button-danger" id="animateButton">Start Animation</button>
-            <button class="uk-button uk-button-default" id="stopButton">Stop Animation</button>
+    <!-- Header Section -->
+    <header class="header d-flex flex-column justify-content-center align-items-center">
+        <h1 class="display-4">Welcome to the Modern Animated Site</h1>
+        <p class="lead">Enjoy the random shapes and smooth animations!</p>
+        <div class="mt-4">
+            <button class="btn btn-primary me-2" id="startAnimation">Start Animation</button>
+            <button class="btn btn-secondary" id="stopAnimation">Stop Animation</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container content mt-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Card One</h5>
+                        <p class="card-text">This is a sleek card styled with Bootstrap.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow-sm bg-primary text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">Card Two</h5>
+                        <p class="card-text">Another card with different styling and color scheme.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow-sm bg-secondary text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">Card Three</h5>
+                        <p class="card-text">Bootstrap makes designing responsive layouts easy.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
     <!-- Canvas for Random Shapes -->
     <canvas id="shapeCanvas"></canvas>
 
-    <!-- UIKit JS -->
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit-icons.min.js"></script>
+    <!-- Bootstrap JS (with Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom Script -->
     <script src="script.js"></script>
 </body>
