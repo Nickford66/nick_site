@@ -1,0 +1,62 @@
+/* styles.css */
+
+/* Hero Section Styling */
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('hero-background.jpg'); /* Replace with your hero image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Overlay to darken the background image for better contrast */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(240, 240, 240, 0.6); /* Light gray overlay */
+    z-index: 0;
+}
+
+/* Ensure content is above the overlay */
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 15px;
+}
+
+.card img {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Canvas Styling */
+#shapeCanvas {
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero {
+        padding: 20px;
+    }
+
+    .card img {
+        height: 200px;
+    }
+}
