@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancy Animated Site with Random Shapes</title>
+    <!-- UIKit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/css/uikit.min.css" />
+    <!-- Custom Styles (optional) -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f0f0f0;
+            overflow: hidden; /* Hide scrollbars for the canvas */
+        }
+        .header {
+            padding: 20px;
+            text-align: center;
+            background-color: #1e87f0;
+            color: white;
+        }
+        #shapeCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place canvas behind other content */
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>Welcome to the Fancy Animated Site</h1>
+        <p>Enjoy the random shapes and animations!</p>
+    </header>
+
+    <main class="uk-container uk-margin-top">
+        <div class="uk-grid-small uk-child-width-1-3@s uk-text-center" uk-grid>
+            <div>
+                <div class="uk-card uk-card-default uk-card-body">
+                    <h3 class="uk-card-title">Card 1</h3>
+                    <p>This is a simple card with UIKit styling.</p>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-primary uk-card-body">
+                    <h3 class="uk-card-title">Card 2</h3>
+                    <p>Another card with different styling.</p>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-secondary uk-card-body">
+                    <h3 class="uk-card-title">Card 3</h3>
+                    <p>UIKit makes it easy to design beautiful layouts.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="uk-text-center uk-margin-top">
+            <button class="uk-button uk-button-danger" id="animateButton">Start Animation</button>
+            <button class="uk-button uk-button-default" id="stopButton">Stop Animation</button>
+        </div>
+    </main>
+
+    <!-- Canvas for Random Shapes -->
+    <canvas id="shapeCanvas"></canvas>
+
+    <!-- UIKit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit-icons.min.js"></script>
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
