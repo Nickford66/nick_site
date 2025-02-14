@@ -101,14 +101,14 @@
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
     }
 
-    /* Logos Section */
-    .logos-section {
+    /* Logos styles (now inside the signup section) */
+    .signup-logos {
       padding: 60px 0;
       background-color: #1e1e1e;
       position: relative;
       overflow: hidden;
     }
-    .logos-section::before {
+    .signup-logos::before {
       content: "";
       position: absolute;
       bottom: -50px;
@@ -121,7 +121,7 @@
       border-radius: 20px;
       animation: pulse 4s infinite;
     }
-    .logos-section img {
+    .signup-logos img {
       max-width: 300px;
       width: 100%;
       height: auto;
@@ -173,7 +173,7 @@
         padding: 12px 25px;
         font-size: 16px;
       }
-      .logos-section img {
+      .signup-logos img {
         max-width: 60px;
         margin: 0 10px;
       }
@@ -195,22 +195,24 @@
     </div>
   </header>
 
-  <!-- Sign Up Section (with Logos Section placed below the signup button) -->
+  <!-- Sign Up Section (with Logos inside) -->
   <section class="signup-section">
     <div class="container">
       <h2>sign up today</h2>
       <a class="signup-btn" href="https://forms.office.com/r/uKsZJMVJiD" target="_blank" rel="noopener">click me</a>
     </div>
-    <div class="container mt-5">
-      <div class="row justify-content-center align-items-center">
-        <div class="col-auto">
-          <img src="BCC.png" alt="BCC Logo">
-        </div>
-        <div class="col-auto">
-          <img src="bait.jpg" alt="Bait">
-        </div>
-        <div class="col-auto">
-          <img src="theatre.jpg" alt="Theatre Club">
+    <div class="signup-logos">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-auto">
+            <img src="BCC.png" alt="BCC Logo">
+          </div>
+          <div class="col-auto">
+            <img src="bait.jpg" alt="Bait">
+          </div>
+          <div class="col-auto">
+            <img src="theatre.jpg" alt="Theatre Club">
+          </div>
         </div>
       </div>
     </div>
