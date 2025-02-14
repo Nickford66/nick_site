@@ -24,6 +24,13 @@
       color: #001122;
       margin-bottom: 0;
     }
+    /* Style for the logo */
+    .logo {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      border-radius: 110px;
+    }
     .signup-section {
       padding: 50px 0;
       text-align: center;
@@ -77,6 +84,10 @@
       .header-section h1 {
         font-size: 48px;
       }
+      /* Resize logo on small screens */
+      .logo {
+        max-width: 150px;
+      }
       .signup-section {
         padding: 30px 0;
       }
@@ -108,7 +119,7 @@
       <h1>by students, for students</h1>
     </div>
     <div class="container">
-      <img src="logo.png" alt="Logo" style="border-radius: 110px;">
+      <img src="logo.png" alt="Logo" class="logo">
     </div>
   </header>
 
@@ -131,4 +142,20 @@
           <img src="bait.jpg" alt="Bait">
         </div>
         <div class="col-auto">
-          <img src="thea
+          <img src="theatre.jpg" alt="Theatre Club">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© techjam. 2025</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
