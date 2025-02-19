@@ -5,189 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>techjam</title>
   <!-- Favicon -->
-  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="icon" href="images/favicon.png" type="image/png">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <style>
-    /* Import Montserrat with explicit weights */
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-    /* Global Styles */
-    body {
-        background-color: #121212;
-        color: #f0f0f0;
-        font-family: 'Montserrat', sans-serif;
-        overflow-x: hidden;
-        background-image: url('background.png');
-        background-size: cover; /* Ensures the image covers the entire background */
-        background-position: center; /* Centers the background image */
-        background-repeat: no-repeat; /* Prevents repeating the image */
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); }
-      50% { box-shadow: 0 0 40px rgba(255, 255, 255, 0.3); }
-    }
-
-    /* Header */
-    .header-section {
-      position: relative;
-      padding: 80px 0;
-      text-align: center;
-      overflow: hidden;
-    }
-    .header-section::before {
-      content: "";
-      position: absolute;
-      top: -20%;
-      left: -20%;
-      width: 140%;
-      height: 140%;
-      background: radial-gradient(circle, rgba(0,153,255,0.15), transparent 70%);
-      z-index: -2;
-      animation: fadeIn 1.5s ease-out;
-    }
-    .header-section h1 {
-      font-size: 400px;
-      color: #ffffff;
-      margin-bottom: 1rem;
-      text-shadow: 0 2px 10px black;
-      animation: fadeIn 1s ease-out;
-    }
-    .header-section h2 {
-      font-size: 64px;
-      color: #ffffff;
-      margin-bottom: 1.5rem;
-      text-shadow: 0 2px 10px black;
-      animation: fadeIn 1s ease-out;
-    }
-    /* Style for the logo */
-    .logo {
-      max-width: 1500px;
-      width: 100%;
-      height: auto;
-      border-radius: 110px;
-      transition: transform 0.3s ease;
-      animation: fadeIn 1.2s ease-out;
-    }
-    .logo:hover {
-      transform: scale(1.05);
-    }
-
-    /* Sign Up Section */
-    .signup-section {
-      padding: 50px;
-      text-align: center;
-      position: relative;
-    }
-    .signup-section h2 {
-      font-size: 28px;
-      color: #fff;
-      animation: fadeIn 1s ease-out;
-    }
-    .signup-btn {
-      display: inline-block;
-      padding: 25px 40px;
-      background: linear-gradient(45deg, #A9A9A9, #7393B3);
-      color: #fff;
-      border: none;
-      border-radius: 50px;
-      font-weight: 600;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: fadeIn 1s ease-out;
-    }
-    .signup-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-    }
-
-    /* Logos styles (now inside the signup section) */
-    .signup-logos {
-      padding: 20px 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .signup-logos img {
-      max-width: 150px;
-      width: 100%;
-      height: auto;
-      margin: 0 15px;
-      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));
-      animation: fadeIn 1s ease-out;
-      border-radius: 100px;
-    }
-
-    /* Footer */
-    .footer {
-      background-color: #1e1e1e;
-      color: #bbb;
-      padding: 20px 0;
-      text-align: center;
-      position: relative;
-    }
-    .footer::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle, rgba(0,153,255,0.1), transparent 70%);
-      z-index: -1;
-    }
-    .footer p {
-      margin: 0;
-      font-size: 16px;
-      animation: fadeIn 1s ease-out;
-    }
-
-    /* Responsive adjustments for small screens */
-    @media (max-width: 576px) {
-      .header-section {
-        padding: 60px 0;
-      }
-      .header-section h1 {
-        font-size: 100px;
-      }
-      .header-section h2 {
-        font-size: 25px;
-      }
-      .logo {
-        max-width: 500px;
-      }
-      .signup-section h2 {
-        font-size: 22px;
-      }
-      .signup-btn {
-        padding: 12px 25px;
-        font-size: 16px;
-      }
-      .signup-logos img {
-        max-width: 50px;
-        margin: 0 10px;
-        border-radius: 60px;
-      }
-      .footer {
-        padding: 10px 0;
-        font-size: 14px;
-      }
-    }
-  </style>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header -->
+  <!-- Header (Hero Section) -->
   <header class="header-section">
     <div class="container mb-4">
       <h2>by students, for students</h2>
@@ -201,68 +26,64 @@
   <section class="signup-section">
     <div class="container mb-4">
       <h2>sign up today</h2>
-      <a class="signup-btn" href="https://forms.office.com/r/uKsZJMVJiD" target="_blank" rel="noopener">click me</a>
+      <a class="signup-btn" href="https://forms.office.com/r/uKsZJMVJiD" target="_blank" rel="noopener">join the jam</a>
     </div>
     <div class="signup-logos">
       <div class="container">
         <div class="row justify-content-center align-items-center">
           <div class="col-auto">
-            <a href="https://experiencewmu.wmich.edu/organization/bcc"><img src="BCC.png" alt="BCC Logo"></a>
+            <a href="https://experiencewmu.wmich.edu/organization/bcc">
+              <img src="images/BCC.png" alt="BCC Logo">
+            </a>
           </div>
           <div class="col-auto">
-            <a href="https://experiencewmu.wmich.edu/organization/bait"><img src="bait.jpg" alt="Bait"></a>
+            <a href="https://experiencewmu.wmich.edu/organization/bait">
+              <img src="images/bait.jpg" alt="Bait">
+            </a>
           </div>
           <div class="col-auto">
-            <a href="https://experiencewmu.wmich.edu/organization/broncotheatreclub"><img src="theatre.jpg" alt="Theatre Club"></a>
+            <a href="https://experiencewmu.wmich.edu/organization/broncotheatreclub">
+              <img src="images/theatre.jpg" alt="Theatre Club">
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-<!-- Two Rows with Alternating Image and Text with Opaque Background Under Text -->
-<section class="bottom-section my-5">
-  <div class="container">
-    <!-- First Row: Image Left, Text Right -->
-    <div class="row align-items-center mb-5">
-      <!-- Image Column -->
-      <div class="col-md-6">
-        <img src="socialengineer.webp" alt="Picture 1" class="img-fluid rounded">
+  <!-- Two Rows with Alternating Image and Text with Opaque Background Under Text -->
+  <section class="bottom-section my-5">
+    <div class="container">
+      <!-- First Row: Image Left, Text Right -->
+      <div class="row align-items-center mb-5 row-alternate">
+        <div class="col-md-6">
+          <img src="images/socialengineer.webp" alt="Picture 1" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6">
+          <div class="text-bg">
+            <h3>social engineering competition</h3>
+            <p>hey everyone, ready to put your social engineering skills to the test? join our competition where you'll team up in groups of 3-5 with fellow college students for a live call with a "client." using a mix of interview tactics and osint, your team will work together to figure out if an employment scam is legit. these aren't just practice sessions—this is your chance to dive into a real-life investigation that mirrors the challenges of the digital world.</p>
+            <p>during the call, your team will engage directly with the client, ask thoughtful questions, and use your collective analytical skills to spot subtle red flags. it's a unique opportunity to collaborate, learn from each other, and see firsthand how strategic communication and keen observation can uncover fraudulent schemes.</p>
+            <p>after the call, you'll continue working as a team, reviewing your findings, discussing different approaches, and refining your techniques in a supportive, hands-on environment that builds both your technical know-how and teamwork skills. and the experience doesn't end there—the competition will wrap up with a final in-person presentation on apr 4, where you'll showcase your team's insights and discoveries.</p>
+          </div>
+        </div>
       </div>
-      <!-- Text Column -->
-      <div class="col-md-6">
-        <div class="text-bg">
-          <h3>social engineering competition</h3>
-          <p>hey everyone, ready to put your social engineering skills to the test? join our competition where you'll team up in groups of 3-5 with fellow college students for a live call with a "client." using a mix of interview tactics and osint, your team will work together to figure out if an employment scam is legit. these aren't just practice sessions—this is your chance to dive into a real-life investigation that mirrors the challenges of the digital world.</p> <p>during the call, your team will engage directly with the client, ask thoughtful questions, and use your collective analytical skills to spot subtle red flags. it's a unique opportunity to collaborate, learn from each other, and see firsthand how strategic communication and keen observation can uncover fraudulent schemes.</p> <p>after the call, you'll continue working as a team, reviewing your findings, discussing different approaches, and refining your techniques in a supportive, hands-on environment that builds both your technical know-how and teamwork skills. and the experience doesn't end there—the competition will wrap up with a final in-person presentation on apr 4, where you'll showcase your team's insights and discoveries.</p> <p>if you're looking for a chance to outsmart scammers, gain practical experience, and boost your resume while making a real impact in the digital world, this is the challenge for you. join us, team up, and take the first step toward building a safer online community!</p>
+      <!-- Second Row: Text Left, Image Right (mobile: image then text) -->
+      <div class="row align-items-center row-alternate">
+        <div class="col-md-6 order-md-1 order-2">
+          <div class="text-bg">
+            <h3>pitch competition</h3>
+            <p>listen up, future founders: got a tech idea that could change the game? join our startup pitch competition, shark tank style, where you'll team up in groups of 3-5 to pitch your vision to an expert panel. it's your chance to share your ideas, fine-tune your pitch, and receive real-time feedback from professionals who can help you elevate your startup to the next level.</p>
+            <p>whether you're in the early stages of brainstorming or already building your startup, this event is designed for students ready to shake up the tech scene. you'll collaborate with like-minded peers, brainstorm innovative solutions, and support each other as you prepare your pitch. it's not just about the possibility of securing funding—it's about learning, growing, and making valuable connections that can jumpstart your entrepreneurial journey.</p>
+            <p>we'll send out all the details a few weeks before the event, giving you ample time to form your team, refine your concept, and practice your presentation. the competition will culminate in a final presentation where your team gets to showcase your vision to an expert panel, providing you with a real-world platform to prove your idea's potential.</p>
+          </div>
+        </div>
+        <div class="col-md-6 order-md-2 order-1">
+          <img src="images/pitch.webp" alt="Picture 2" class="img-fluid rounded">
         </div>
       </div>
     </div>
-    <!-- Second Row: Text Left, Image Right -->
-    <div class="row align-items-center">
-      <!-- Text Column -->
-      <div class="col-md-6">
-        <div class="text-bg">
-          <h3>pitch competition</h3>
-          <p>listen up, future founders: got a tech idea that could change the game? join our startup pitch competition, shark tank style, where you'll team up in groups of 3-5 to pitch your vision to an expert panel. it's your chance to share your ideas, fine-tune your pitch, and receive real-time feedback from professionals who can help you elevate your startup to the next level.</p> <p>whether you're in the early stages of brainstorming or already building your startup, this event is designed for students ready to shake up the tech scene. you'll collaborate with like-minded peers, brainstorm innovative solutions, and support each other as you prepare your pitch. it's not just about the possibility of securing funding—it's about learning, growing, and making valuable connections that can jumpstart your entrepreneurial journey.</p> <p>we'll send out all the details a few weeks before the event, giving you ample time to form your team, refine your concept, and practice your presentation. the competition will culminate in a final presentation where your team gets to showcase your vision to an expert panel, providing you with a real-world platform to prove your idea's potential.</p> <p>step up, show your creativity, and let's make some waves in the tech world. this is your opportunity to transform a big idea into reality, gain hands-on experience, and leave a lasting impact on the startup community. are you ready to take the leap?</p>
-        </div>
-      </div>
-      <!-- Image Column -->
-      <div class="col-md-6">
-        <img src="pitch.webp" alt="Picture 2" class="img-fluid rounded">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Custom CSS for the text background -->
-<style>
-  .text-bg {
-    background-color: rgba(0, 0, 0, 0.6); /* Slightly opaque black */
-    padding: 20px;
-    border-radius: 10px;
-  }
-</style>
-
+  </section>
 
   <!-- Footer -->
   <footer class="footer">
