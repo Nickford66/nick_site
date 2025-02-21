@@ -10,6 +10,20 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Optional inline CSS for the countdown section */
+    .countdown-section {
+      text-align: center;
+      margin: 1rem 0;
+      font-weight: 400;
+
+    }
+    #countdown {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
   <!-- Header (Hero Section) -->
@@ -48,6 +62,14 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Countdown Timer Section -->
+  <section class="countdown-section">
+    <div class="container">
+      <h2>apr 4, 2025</h2>
+      <div id="countdown"></div>
     </div>
   </section>
 
@@ -91,6 +113,34 @@
       <p>© techjam 2025</p>
     </div>
   </footer>
+
+  <!-- Countdown Timer Script -->
+  <script>
+    // Set the target date for the countdown (April 4, 2025)
+    const targetDate = new Date("April 4, 2025 00:00:00").getTime();
+
+    // Update the countdown every second
+    const countdownInterval = setInterval(() => {
+      const now = new Date().getTime();
+      const timeLeft = targetDate - now;
+
+      // Calculate days, hours, minutes, seconds
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      // Display the result in the element with id="countdown"
+      document.getElementById("countdown").innerHTML =
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+      // If the countdown is finished, display a message
+      if (timeLeft < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("countdown").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+  </script>
 
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
