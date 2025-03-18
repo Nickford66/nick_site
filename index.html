@@ -18,7 +18,6 @@
       text-align: center;
       margin: 1rem 0;
       font-weight: 400;
-
     }
     #countdown {
       font-size: 2rem;
@@ -28,6 +27,26 @@
   </style>
 </head>
 <body>
+  <!-- Navbar / Hamburger Menu -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">techjam</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="guest-speaker.html">Guest Speaker</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="judges.html">Judges</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
   <!-- Header (Hero Section) -->
   <header class="header-section">
     <div class="container mb-4">
@@ -120,23 +139,19 @@
   <script>
     // Set the target date for the countdown (April 4, 2025)
     const targetDate = new Date("April 4, 2025 00:00:00").getTime();
-
     // Update the countdown every second
     const countdownInterval = setInterval(() => {
       const now = new Date().getTime();
       const timeLeft = targetDate - now;
-
       // Calculate days, hours, minutes, seconds
       const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
       const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-      // Display the result in the element with id="countdown"
+      // Display the result
       document.getElementById("countdown").innerHTML =
         days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-      // If the countdown is finished, display a message
+      // If finished, display a message
       if (timeLeft < 0) {
         clearInterval(countdownInterval);
         document.getElementById("countdown").innerHTML = "EXPIRED";
