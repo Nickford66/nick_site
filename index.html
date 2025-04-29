@@ -1,173 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta property="og:image" content="images/logo.png">
-  <meta name="description" content="Join the Student-Organized Technology Innovation Challenge on April 4" />
-  <title>techjam</title>
-  <!-- Favicon -->
-  <link rel="icon" href="images/favicon.png" type="image/png">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Optional inline CSS for the countdown section */
-    .countdown-section {
-      text-align: center;
-      margin: 1rem 0;
-      font-weight: 400;
-    }
-    #countdown {
-      font-size: 2rem;
-      font-weight: 800;
-      color: #fff;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Incitatus | Sovereign AI</title>
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Navbar / Hamburger Menu -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">techjam</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarMain">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="guest-speaker.html">Guest Speakers</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="judges.html">Judges</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="catering.html">Catering</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="agenda.html">Agenda</a>
-          </li>
-        </ul>
-      </div>
-    </div>
+  <!-- Color blobs -->
+  <div class="blob cyan"></div>
+  <div class="blob violet"></div>
+  <div class="blob pink"></div>
+
+  <!-- Frosted nav -->
+  <nav>
+    <a href="#vision">Vision</a>
+    <a href="#why">Federated</a>
+    <a href="#arch">Architecture</a>
+    <a href="#benefits">Benefits</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Header (Hero Section) -->
-  <header class="header-section">
-    <div class="container mb-4">
-      <h2>by students, for students</h2>
-    </div>
-    <div>
-      <h1>tech jam</h1>
-    </div>
-  </header>
+  <!-- HERO  -->
+  <section id="vision" class="snap">
+    <article class="card animate">
+      <h1 class="gradient">Incitatus —<br>Sovereign AI</h1>
 
-  <!-- Sign Up Section (with Logos inside) -->
-  <section class="signup-section">
-    <div class="container mb-4">
-      <h1>Advanced SPuRS Certified</h1>
-      <h2>sign up today</h2>
-      <a class="signup-btn" href="https://forms.office.com/r/uKsZJMVJiD" target="_blank" rel="noopener">join the jam</a>
-    </div>
-    <div class="signup-logos">
-      <div class="container">
-        <div class="row justify-content-center align-items-center">
-          <div class="col-auto">
-            <a href="https://experiencewmu.wmich.edu/organization/bcc">
-              <img src="images/BCC.png" alt="BCC Logo">
-            </a>
-          </div>
-          <div class="col-auto">
-            <a href="https://experiencewmu.wmich.edu/organization/bait">
-              <img src="images/bait.jpg" alt="Bait">
-            </a>
-          </div>
-          <div class="col-auto">
-            <a href="https://experiencewmu.wmich.edu/organization/broncotheatreclub">
-              <img src="images/theatre.jpg" alt="Theatre Club">
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+      <!-- value / vision statement -->
+      <p class="lead">
+        We cultivate intelligence like a <em>garden</em>, not a commodity.  
+        Incitatus empowers everyone with <b>local, private, resilient</b> AI
+        that learns <i>with</i> you — never <i>about</i> you.
+      </p>
+    </article>
   </section>
 
-  <!-- Countdown Timer Section -->
-  <section class="countdown-section">
-    <div class="container">
-      <h2>apr 4, 2025</h2>
-      <div id="countdown"></div>
-    </div>
+  <!-- WHY FEDERATED -->
+  <section id="why" class="snap">
+    <article class="card animate">
+      <h2 class="gradient">Why Federated Learning?</h2>
+      <ul>
+        <li><b>Privacy by design</b> — raw data never leaves your device.</li>
+        <li><b>Diverse learning</b> — gains insight from global experience.</li>
+        <li><b>Hyper-personal</b> — models adapt to local context & culture.</li>
+        <li><b>Resilient network</b> — no single point of failure or control.</li>
+        <li><b>Reg-ready</b> — native compliance with GDPR, HIPAA & AI acts.</li>
+      </ul>
+    </article>
   </section>
 
-  <!-- Two Rows with Alternating Image and Text with Opaque Background Under Text -->
-  <section class="bottom-section my-5">
-    <div class="container">
-      <!-- First Row: Image Left, Text Right -->
-      <div class="row align-items-center mb-5 row-alternate">
-        <div class="col-md-6">
-          <img src="images/socialengineer.png" alt="Picture 1" class="img-fluid rounded">
-        </div>
-        <div class="col-md-6">
-          <div class="text-bg">
-            <h3>social engineering challenge</h3>
-            <p>hey everyone, ready for a fresh twist on your social engineering skills? picture this: you receive a voicemail from a client who needs help with a message from the irs claiming they owe money. this isn't just any message—it’s the beginning of a high-stakes investigation.</p>
-            <p>after the voicemail, you'll schedule an in-person meeting with the client to get to the bottom of the issue. during this interview, your team will need to uncover 10 key flags, each serving as an essential clue in the case.</p>
-            <p>once the interview wraps up, you'll have just 2 hours to compile your findings into a presentation. it's a fast-paced, real-world exercise designed to test your analytical skills, teamwork, and ability to perform under pressure.</p>
-
-          </div>
-        </div>
-      </div>
-      <!-- Second Row: Text Left, Image Right (mobile: image then text) -->
-      <div class="row align-items-center row-alternate">
-        <div class="col-md-6 order-md-1 order-2">
-          <div class="text-bg">
-            <h3>pitch competition</h3>
-            <p>listen up, future founders: got a tech idea that could change the game? join our startup pitch competition, shark tank style, where you'll team up in groups of 3-5 to pitch your vision to an expert panel. it's your chance to share your ideas, fine-tune your pitch, and receive real-time feedback from professionals who can help you elevate your startup to the next level.</p>
-            <p>whether you're in the early stages of brainstorming or already building your startup, this event is designed for students ready to shake up the tech scene. you'll collaborate with like-minded peers, brainstorm innovative solutions, and support each other as you prepare your pitch. it's not just about the possibility of securing funding—it's about learning, growing, and making valuable connections that can jumpstart your entrepreneurial journey.</p>
-            <p>we'll send out all the details a few weeks before the event, giving you ample time to form your team, refine your concept, and practice your presentation. the competition will culminate in a final presentation where your team gets to showcase your vision to an expert panel, providing you with a real-world platform to prove your idea's potential.</p>
-          </div>
-        </div>
-        <div class="col-md-6 order-md-2 order-1">
-          <img src="images/pitch.png" alt="Picture 2" class="img-fluid rounded">
-        </div>
-      </div>
-    </div>
+  <!-- ARCHITECTURE -->
+  <section id="arch" class="snap">
+    <article class="card animate">
+      <h2 class="gradient">Architecture Snapshot</h2>
+      <ul>
+        <li><b>Local Fine-Tuning + Redis RAG</b> — on-device LoRA & vector DB.</li>
+        <li><b>P2P Mesh</b> — encrypted weight gossip between peers.</li>
+        <li><b>Hybrid Validation</b> — device tests + steward Benchmarks.</li>
+        <li><b>Blockchain Anchoring</b> — immutable audit trail of updates.</li>
+        <li><b>Flower Foundation</b> — trusted federated-learning layer.</li>
+      </ul>
+    </article>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>© techjam 2025</p>
-    </div>
-  </footer>
+  <!-- BENEFITS -->
+  <section id="benefits" class="snap">
+    <article class="card animate">
+      <h2 class="gradient">Key Benefits</h2>
+      <div class="grid">
+        <div><h3>Privacy</h3><p>No central data lakes.</p></div>
+        <div><h3>Trust</h3><p>On-chain provenance.</p></div>
+        <div><h3>Resilience</h3><p>Offline-friendly.</p></div>
+        <div><h3>Eco-Smart</h3><p>Minimal server farms.</p></div>
+        <div><h3>Community</h3><p>Steward governance.</p></div>
+      </div>
+    </article>
+  </section>
 
-  <!-- Countdown Timer Script -->
-  <script>
-    // Set the target date for the countdown (April 4, 2025)
-    const targetDate = new Date("April 4, 2025 00:00:00").getTime();
-    // Update the countdown every second
-    const countdownInterval = setInterval(() => {
-      const now = new Date().getTime();
-      const timeLeft = targetDate - now;
-      // Calculate days, hours, minutes, seconds
-      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-      // Display the result
-      document.getElementById("countdown").innerHTML =
-        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-      // If finished, display a message
-      if (timeLeft < 0) {
-        clearInterval(countdownInterval);
-        document.getElementById("countdown").innerHTML = "EXPIRED";
-      }
-    }, 1000);
-  </script>
+  <!-- CONTACT -->
+  <section id="contact" class="snap">
+    <article class="card animate">
+      <h2 class="gradient">Get Involved</h2>
+      <p>We’re onboarding researchers, pilot partners, and early contributors.</p>
+      <p><a class="cta" href="mailto:founders@incitatus.ai">founders@incitatus.ai</a></p>
+      <footer>&copy; 2025 Incitatus · Sovereign AI</footer>
+    </article>
+  </section>
 
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+/* Fade-in on scroll */
+const io = new IntersectionObserver(e=>e.forEach(
+  d=>d.isIntersecting&&d.target.classList.add('show')
+),{threshold:.25});
+document.querySelectorAll('.animate').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>
